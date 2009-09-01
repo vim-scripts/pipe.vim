@@ -1,0 +1,16 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2769
+
+find | pipe.vim | nl
+find | xargs pipe.vim
+
+Simplify invoking vim within Unix pipes for situations not covered by a simple *vi -*: I just too often forget to properly add all the required >/dev/tty </dev/tty and similar in pipes and xargs commands.
+
+All input is collected into a temporary file, prefixed with a small help text. Vim then edits this file with its IO being redirected to the tty. After editing the file is printed to stdout and serves as input for the next pipeline stage. 
+
+Some more information can be found in the comments in the script itself.
+
+Note that the  name is just my way of not cluttering ~/bin: pipe.vim is a perl script for use with pipes that is a helper for vim. It is NOT a vim macro.
+
+The current version is available from:
+http://jakobi.github.com/script-archive-doc/
+http://github.com/jakobi/script-archive/tree/master/vim/
